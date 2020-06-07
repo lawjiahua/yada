@@ -50,12 +50,12 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: EagerNaturalist
+    - family: EagleNaturalist
       fonts:
-        - asset: assets/fonts/EagleNaturalist.ttf
+        - asset: assets/fonts/eager.ttf
     - family: ScribbleWire
       fonts:
-        - asset: assets/fonts/ScribbleWire.ttf     
+        - asset: assets/fonts/ScribbleWire.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

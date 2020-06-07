@@ -31,8 +31,13 @@ class _MyAppState extends State<MyApp> {
                 fontSize: 30,
                 color: Colors.black,
               ),
+              headline2: TextStyle(
+                fontFamily: "ScribbleWire",
+                fontSize: 18,
+              ),
               bodyText1: TextStyle(
                 fontFamily: "EagleNaturalist",
+                fontSize: 18,
                 color: Colors.black,
               ))),
       home: HomePage(),
@@ -53,34 +58,45 @@ class HomePage extends StatelessWidget {
     final size = mediaquery.size;
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 175),
-          child: Column(
-            children: <Widget>[
-              Container(
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left: 20,
+              top: 20,
+              child: Container(
                   child: Text(
                 "Yada",
                 style: Theme.of(context).textTheme.headline1,
               )),
-              Container(
+            ),
+            Positioned(
+              height: size.height * 0.75,
+              width: size.width * 0.75,
+              left: size.width * 0.05,
+              child: Container(
                 child: Image.asset(
-                  'assets/images/characters.png',
-                  width: size.width * 0.5,
-                  height: size.height * 0.45,
+                  'assets/images/characters_spaced_out.png',
+                  fit: BoxFit.contain,
                 ),
               ),
-              InkWell(
+            ),
+            Positioned(
+              bottom: size.height * 0.05,
+              left: size.width * 0.25,
+              height: size.height * 0.35,
+              width: size.width * 0.4,
+              child: InkWell(
                 child: Image.asset(
                   'assets/images/pile_of_cards.png',
-                  width: size.width * 0.3,
+                  fit: BoxFit.contain,
                 ),
                 onTap: () {
                   viewDecks(context);
                 },
                 splashColor: Colors.red,
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
