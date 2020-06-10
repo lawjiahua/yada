@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import './cards_data.dart';
+import '../cards_data.dart';
+
+import '../deck_screen.dart';
 
 class CarosellItem extends StatelessWidget {
   final Size size;
@@ -11,6 +13,17 @@ class CarosellItem extends StatelessWidget {
     this.deck,
   }) : super(key: key);
 
+  void startDeck(BuildContext context) {
+    Navigator.of(context).pop();
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) {
+        return DeckScreen(
+          deck: deck,
+        );
+      },
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     viewDeckSenario() {
@@ -18,22 +31,16 @@ class CarosellItem extends StatelessWidget {
         context: context,
         builder: (context) {
           return Dialog(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Color.fromRGBO(255, 243, 215, 1),
             child: Container(
-              height: size.height * 0.6,
-              width: size.width * 0.8,
+              height: size.height * 0.8,
+              width: size.width * 0.6,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/box_border.png"),
-                    fit: BoxFit.contain),
+                    image: AssetImage("assets/images/border_landscape.png"),
+                    fit: BoxFit.fill),
                 color: Colors.transparent,
                 shape: BoxShape.rectangle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 10,
-                  ),
-                ],
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -41,8 +48,8 @@ class CarosellItem extends StatelessWidget {
                   Image.asset(
                     deck.senarioURL,
                     fit: BoxFit.contain,
-                    height: size.height * 0.2,
-                    width: size.width * 0.2,
+                    height: size.height * 0.3,
+                    width: size.width * 0.3,
                   ),
                   SizedBox(
                     height: size.height * 0.10,
@@ -52,11 +59,20 @@ class CarosellItem extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: size.height * 0.10,
+                    height: size.height * 0.28,
                     child: Text(
                       deck.senario,
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
+                  ),
+                  FlatButton(
+                    child: Text(
+                      "Let's go",
+                      style: Theme.of(context).textTheme.headline2,
+                    ),
+                    onPressed: () {
+                      startDeck(context);
+                    },
                   )
                 ],
               ),

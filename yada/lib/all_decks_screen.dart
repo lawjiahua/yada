@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import './carosell_item.dart';
+import './widgets/carosell_item.dart';
 import './cards_data.dart';
 
 class AllDecksScreen extends StatefulWidget {
@@ -44,6 +44,7 @@ class _AllDecksScreenState extends State<AllDecksScreen> {
               options: CarouselOptions(
                 aspectRatio: 1.6,
                 onPageChanged: changeDeck,
+                enableInfiniteScroll: false,
                 enlargeCenterPage: true,
                 viewportFraction: 0.35,
                 height: size.height * 0.70,

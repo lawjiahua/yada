@@ -32,6 +32,7 @@ dependencies:
 dev_dependencies:
   carousel_slider: ^2.1.0
   imagebutton: ^0.0.6
+  flip_card: ^0.4.4
   flutter_test:
     sdk: flutter
 
