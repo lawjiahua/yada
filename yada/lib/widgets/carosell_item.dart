@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/deck.dart';
-import '../screens/deck_screen.dart';
+import '../screens/playing_screen.dart';
 
 class CarosellItem extends StatelessWidget {
   final Size size;
@@ -17,7 +17,7 @@ class CarosellItem extends StatelessWidget {
     Navigator.of(context).pop();
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) {
-        return DeckScreen(
+        return PlayingScreen(
           deck: deck,
         );
       },
