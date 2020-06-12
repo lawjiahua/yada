@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/deck.dart';
-import '../all_decks_screen.dart';
+import '../screens/all_decks_screen.dart';
 
 class DeckScreenAppbar extends StatelessWidget {
   final Size size;

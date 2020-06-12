@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/deck.dart';
 
-import '../deck_screen.dart';
+import '../models/deck.dart';
+import '../screens/deck_screen.dart';
 
 class CarosellItem extends StatelessWidget {
   final Size size;
