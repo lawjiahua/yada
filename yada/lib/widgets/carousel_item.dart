@@ -10,7 +10,7 @@ class CarouselItem extends StatelessWidget {
   const CarouselItem({
     Key key,
     @required this.size,
-    this.deck,
+    @required this.deck,
   }) : super(key: key);
 
   void startDeck(BuildContext ctx) {

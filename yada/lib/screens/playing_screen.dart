@@ -34,6 +34,7 @@ class _PlayingScreenState extends State<PlayingScreen> {
 
       return PlayingCardItem(
         playingCard: cards[randomIndex],
+        iconURL: deck.getIconURL(cards[randomIndex].level),
         size: size,
       );
     }

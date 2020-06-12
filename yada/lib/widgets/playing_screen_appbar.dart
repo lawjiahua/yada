@@ -15,7 +15,10 @@ class PlayingScreenAppBar extends StatelessWidget {
     'Soulm8 4 lyf'
   ];
 
-  const PlayingScreenAppBar({this.deck, this.size});
+  const PlayingScreenAppBar({
+    @required this.deck,
+    @required this.size,
+  });
 
   void backToDecks(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
