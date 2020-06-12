@@ -17,12 +17,10 @@ class PlayingScreenAppBar extends StatelessWidget {
 
   const PlayingScreenAppBar({this.deck, this.size});
 
-  void backToDecks(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (_) {
-        return AllDecksScreen();
-      },
-    ));
+  void backToDecks(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      AllDecksScreen.routeName,
+    );
   }
 
   @override

@@ -13,15 +13,11 @@ class CarosellItem extends StatelessWidget {
     this.deck,
   }) : super(key: key);
 
-  void startDeck(BuildContext context) {
-    Navigator.of(context).pop();
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (_) {
-        return PlayingScreen(
-          deck: deck,
-        );
-      },
-    ));
+  void startDeck(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      PlayingScreen.routeName,
+      arguments: deck,
+    );
   }
 
   @override
