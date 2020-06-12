@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../cards_data.dart';
+import '../models/deck.dart';
 
 import '../deck_screen.dart';
 
@@ -46,7 +46,7 @@ class CarosellItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Image.asset(
-                    deck.senarioURL,
+                    deck.scenarioURL,
                     fit: BoxFit.contain,
                     height: size.height * 0.3,
                     width: size.width * 0.3,

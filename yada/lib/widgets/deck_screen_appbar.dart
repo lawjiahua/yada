@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../cards_data.dart';
+import '../models/deck.dart';
 import '../all_decks_screen.dart';
 
 class DeckScreenAppbar extends StatelessWidget {
@@ -66,7 +66,7 @@ class DeckScreenAppbar extends StatelessWidget {
           padding: EdgeInsets.only(left: 10),
           child: FlatButton(
             child: Text(
-              "Back to Decks",
+              "Back to Deck",
               style: Theme.of(context).textTheme.headline2,
             ),
             onPressed: () {

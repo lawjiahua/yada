@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flip_card/flip_card.dart';
 import 'dart:math';
 
 import './cards_data.dart';
 import './widgets/deck_screen_appbar.dart';
-import 'package:flip_card/flip_card.dart';
+import './models/deck.dart';
+import './widgets/playing_card_item.dart';
 
 class DeckScreen extends StatefulWidget {
   final Deck deck;
@@ -16,7 +18,7 @@ class _DeckScreenState extends State<DeckScreen> {
   int totalLevel = 0;
   int randomIndex;
   final Deck deck;
-  List<DeckCard> cards;
+  List<PlayingCardItem> cards;
   _DeckScreenState({this.deck}) {
     cards = ALLCARDS
         .where((card) =>
