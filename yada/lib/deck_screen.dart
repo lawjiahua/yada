@@ -3,8 +3,9 @@ import 'package:flip_card/flip_card.dart';
 import 'dart:math';
 
 import './cards_data.dart';
-import './widgets/deck_screen_appbar.dart';
 import './models/deck.dart';
+import './models/playing_card.dart';
+import './widgets/deck_screen_appbar.dart';
 import './widgets/playing_card_item.dart';
 
 class DeckScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _DeckScreenState extends State<DeckScreen> {
   int totalLevel = 0;
   int randomIndex;
   final Deck deck;
-  List<PlayingCardItem> cards;
+  List<PlayingCard> cards;
   _DeckScreenState({this.deck}) {
     cards = ALLCARDS
         .where((card) =>
@@ -35,23 +36,9 @@ class _DeckScreenState extends State<DeckScreen> {
         randomIndex = Random().nextInt(cards.length);
       });
 
-      return Container(
-        height: size.height * 0.6,
-        width: size.width * 0.4,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/border_landscape.png"),
-              fit: BoxFit.fill),
-          color: Colors.blue,
-          shape: BoxShape.rectangle,
-        ),
-        margin: EdgeInsets.all(20),
-        alignment: Alignment.center,
-        child: Text(
-          cards[randomIndex].content,
-          style: Theme.of(context).textTheme.bodyText1,
-          softWrap: true,
-        ),
+      return PlayingCardItem(
+        playingCard: cards[randomIndex],
+        size: size,
       );
     }
 
