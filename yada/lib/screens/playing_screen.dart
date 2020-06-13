@@ -4,35 +4,28 @@ import 'dart:math';
 
 import '../cards_data.dart';
 import '../models/deck.dart';
-import '../models/playing_card.dart';
 import '../widgets/playing_screen_appbar.dart';
 import '../widgets/playing_card_item.dart';
 
 class PlayingScreen extends StatefulWidget {
-  static final routeName = '/all-decks';
+  static final routeName = '/playing-screen';
 
-  final Deck deck;
-  const PlayingScreen({this.deck});
-  
   @override
-  _PlayingScreenState createState() => _PlayingScreenState(deck: deck);
+  _PlayingScreenState createState() => _PlayingScreenState();
 }
 
 class _PlayingScreenState extends State<PlayingScreen> {
   int totalLevel = 0;
   int randomIndex;
-  final Deck deck;
-  List<PlayingCard> cards;
-  _PlayingScreenState({this.deck}) {
-    cards = ALLCARDS
-        .where((card) =>
-            card.deckName == deck.name && card.level <= totalLevel + 1)
-        .toList();
-  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final deck = ModalRoute.of(context).settings.arguments as Deck;
+    final cards = ALLCARDS
+        .where((card) =>
+            card.deckName == deck.name && card.level <= totalLevel + 1)
+        .toList();
 
     Widget getACard() {
       setState(() {
@@ -41,6 +34,7 @@ class _PlayingScreenState extends State<PlayingScreen> {
 
       return PlayingCardItem(
         playingCard: cards[randomIndex],
+        iconURL: deck.getIconURL(cards[randomIndex].level),
         size: size,
       );
     }
