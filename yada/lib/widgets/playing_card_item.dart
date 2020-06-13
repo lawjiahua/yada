@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import '../models/playing_card.dart';
 
-
 class PlayingCardItem extends StatelessWidget {
   final PlayingCard playingCard;
+  final String iconURL;
   final Size size;
 
   const PlayingCardItem({
-    this.playingCard,
-    this.size,
+    @required this.playingCard,
+    this.iconURL,
+    @required this.size,
   });
 
   @override
@@ -20,15 +21,30 @@ class PlayingCardItem extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage("assets/images/border_landscape.png"),
             fit: BoxFit.fill),
-        color: Colors.blue,
+        color: playingCard.deckColor,
         shape: BoxShape.rectangle,
       ),
       margin: EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       alignment: Alignment.center,
-      child: Text(
-        playingCard.content,
-        style: Theme.of(context).textTheme.bodyText1,
-        softWrap: true,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Container(
+            child: Image.asset(
+              iconURL,
+              fit: BoxFit.contain,
+              height: 70,
+            ),
+          ),
+          Text(
+            playingCard.content,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyText1,
+            softWrap: true,
+          ),
+        ],
       ),
     );
   }

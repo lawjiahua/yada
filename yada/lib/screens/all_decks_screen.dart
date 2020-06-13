@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import '../widgets/carosell_item.dart';
+import '../widgets/carousel_item.dart';
 import '../cards_data.dart';
 import './home_screen.dart';
 
@@ -58,7 +58,7 @@ class _AllDecksScreenState extends State<AllDecksScreen> {
               ),
               items: <Widget>[
                 ...ALLDECKS
-                    .map((deck) => CarosellItem(size: size, deck: deck))
+                    .map((deck) => CarouselItem(size: size, deck: deck))
                     .toList(),
               ],
             ),
