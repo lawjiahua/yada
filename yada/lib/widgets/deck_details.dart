@@ -15,17 +15,17 @@ class DeckDetails extends StatelessWidget {
   Widget buildScenarioColumn(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        vertical: 4,
+        vertical: 8,
         horizontal: 15,
       ),
-      width: 180,
+      width: 220,
       child: Column(
         children: <Widget>[
           Image.asset(
             deck.scenarioURL,
             fit: BoxFit.contain,
             height: 225,
-            width: 150,
+            width: double.infinity,
           ),
           Text(deck.name,
               textAlign: TextAlign.center,
@@ -37,33 +37,40 @@ class DeckDetails extends StatelessWidget {
 
   Widget buildStoryColumn(BuildContext context) {
     return Expanded(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          divider,
-          Text(
-            "The story",
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          divider,
-          Text(
-            deck.senario,
-            style: Theme.of(context).textTheme.bodyText1,
-            textAlign: TextAlign.center,
-            softWrap: true,
-            overflow: TextOverflow.fade,
-          ),
-          divider,
-          FlatButton(
-            child: Text(
-              "Let's go",
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            divider,
+            Text(
+              "The story",
               style: Theme.of(context).textTheme.headline2,
             ),
-            onPressed: () {
-              startDeckHandler(context);
-            },
-          )
-        ],
+            divider,
+            Text(
+              deck.senario,
+              style: Theme.of(context).textTheme.bodyText1,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              overflow: TextOverflow.fade,
+            ),
+            divider,
+            FlatButton(
+              child: Text(
+                "Let's go",
+                style: TextStyle(
+                  fontFamily: "ScribbleWire",
+                  color: Color.fromRGBO(78, 42, 32, 1),
+                  fontSize: 14,
+                ),
+              ),
+              onPressed: () {
+                startDeckHandler(context);
+              },
+            )
+          ],
+        ),
       ),
     );
   }
