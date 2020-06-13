@@ -8,13 +8,72 @@ class DeckDetails extends StatelessWidget {
 
   DeckDetails({this.deck, this.startDeckHandler});
 
+  Widget get divider {
+    return const SizedBox(height: 10);
+  }
+
+  Widget buildScenarioColumn(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 4,
+        horizontal: 15,
+      ),
+      width: 180,
+      child: Column(
+        children: <Widget>[
+          Image.asset(
+            deck.scenarioURL,
+            fit: BoxFit.contain,
+            height: 225,
+            width: 150,
+          ),
+          Text(deck.name,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline3),
+        ],
+      ),
+    );
+  }
+
+  Widget buildStoryColumn(BuildContext context) {
+    return Expanded(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          divider,
+          Text(
+            "The story",
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          divider,
+          Text(
+            deck.senario,
+            style: Theme.of(context).textTheme.bodyText1,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            overflow: TextOverflow.fade,
+          ),
+          divider,
+          FlatButton(
+            child: Text(
+              "Let's go",
+              style: Theme.of(context).textTheme.headline2,
+            ),
+            onPressed: () {
+              startDeckHandler(context);
+            },
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final divider = const SizedBox(height: 10);
     return Container(
       height: size.height * 0.8,
-      width: size.width * 0.6,
+      width: size.width * 0.85,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -25,38 +84,11 @@ class DeckDetails extends StatelessWidget {
       ),
       child: SingleChildScrollView(
         child: Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Image.asset(
-                deck.scenarioURL,
-                fit: BoxFit.contain,
-                height: 250,
-                width: double.infinity,
-              ),
-              divider,
-              Text(
-                "The story",
-                style: Theme.of(context).textTheme.headline2,
-              ),
-              divider,
-              Text(
-                deck.senario,
-                style: Theme.of(context).textTheme.bodyText1,
-                textAlign: TextAlign.center,
-                softWrap: true,
-                overflow: TextOverflow.fade,
-              ),
-              divider,
-              FlatButton(
-                child: Text(
-                  "Let's go",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                onPressed: () {
-                  startDeckHandler(context);
-                },
-              )
+              buildScenarioColumn(context),
+              buildStoryColumn(context),
             ],
           ),
         ),
