@@ -46,7 +46,7 @@ const ALLDECKS = const [
   ),
   Deck(
     name: "Sex Education",
-    description: "M18 Warning: not for the faint-hearted.Adult audiences only.",
+    description: "M18 Warning: not for the faint-hearted. Adult audiences only.",
     senario: "This is senario for sex ed",
     cardBackURL: "assets/images/sex_education_deck.png",
     scenarioURL: "assets/images/pile_of_cards.png",
