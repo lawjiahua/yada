@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               left: size.width * 0.05,
               child: Container(
                 child: Image.asset(
-                  'assets/images/characters_spaced_out.png',
+                  'assets/images/characters_named.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -44,17 +44,33 @@ class HomeScreen extends StatelessWidget {
               left: size.width * 0.25,
               height: size.height * 0.35,
               width: size.width * 0.4,
-              child: InkWell(
-                child: Image.asset(
-                  'assets/images/pile_of_cards.png',
-                  fit: BoxFit.contain,
+              child: Container(
+                child: InkWell(
+                  child: Image.asset(
+                    'assets/images/pile_of_cards.png',
+                    fit: BoxFit.contain,
+                  ),
+                  onTap: () {
+                    viewDecks(context);
+                  },
+                  splashColor: Colors.red,
                 ),
-                onTap: () {
-                  viewDecks(context);
-                },
-                splashColor: Colors.red,
               ),
-            )
+            ),
+            Positioned(
+              bottom: size.height * 0.05,
+              left: size.width * 0.65,
+              height: size.height * 0.35,
+              width: size.width * 0.1,
+              child: Container(
+                child: InkWell(
+                  child: Image.asset(
+                    'assets/images/new_arrow.gif',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
