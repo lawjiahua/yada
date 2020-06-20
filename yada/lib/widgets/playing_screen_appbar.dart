@@ -6,21 +6,18 @@ import '../screens/all_decks_screen.dart';
 class PlayingScreenAppBar extends StatelessWidget {
   final Size size;
   final Deck deck;
-  final int totalLevel = 0;
-  final levelDescriptions = const <String>[
-    "internet friend",
-    'I think i know you',
-    'friend',
-    'bathroom buddies',
-    'Soulm8 4 lyf'
-  ];
+  final totalLevel;
+  final description;
 
   const PlayingScreenAppBar({
     @required this.deck,
     @required this.size,
+    @required this.totalLevel,
+    @required this.description,
   });
 
   void backToDecks(BuildContext ctx) {
+    Navigator.of(ctx).pop();
     Navigator.of(ctx).pushNamed(
       AllDecksScreen.routeName,
     );
@@ -49,8 +46,7 @@ class PlayingScreenAppBar extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Container(
-                child: Text(
-                    "Level: ${levelDescriptions[(totalLevel / 5).floor()]}",
+                child: Text("Level: $description",
                     style: Theme.of(context).textTheme.bodyText1),
               ),
               Container(

@@ -51,7 +51,6 @@ class _AllDecksScreenState extends State<AllDecksScreen> {
               options: CarouselOptions(
                 aspectRatio: 1.6,
                 onPageChanged: changeDeck,
-                enableInfiniteScroll: false,
                 enlargeCenterPage: true,
                 viewportFraction: 0.35,
                 height: size.height * 0.70,
