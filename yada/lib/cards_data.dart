@@ -7,9 +7,10 @@ const ALLDECKS = const [
   Deck(
     name: "Stranger Danger",
     description: "Dont know what to talk about? We've got you covered.",
-    senario: "this is senario 0 ",
+    senario:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis vel nulla at consectetur. Proin a risus sollicitudin, varius tortor et, commodo ante. Maecenas at varius sem, eu tristique leo. Aenean leo mauris, porta at ex a.",
     cardBackURL: "assets/images/stranger_danger_deck.png",
-    scenarioURL: "assets/images/pile_of_cards.png",
+    scenarioURL: "assets/images/stranger_danger_scenario.png",
     iconMap: const [
       'assets/images/icons/zipped_mouth.png',
       'assets/images/icons/jar_with_tongue.png',
@@ -45,7 +46,7 @@ const ALLDECKS = const [
   ),
   Deck(
     name: "Sex Education",
-    description: "M18 Warning: not for the faint-hearted.Adult audiences only.",
+    description: "M18 Warning: not for the faint-hearted. Adult audiences only.",
     senario: "This is senario for sex ed",
     cardBackURL: "assets/images/sex_education_deck.png",
     scenarioURL: "assets/images/pile_of_cards.png",
