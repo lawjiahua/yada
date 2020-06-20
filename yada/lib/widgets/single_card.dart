@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
 
+
+import '../cards_data.dart';
 import '../models/deck.dart';
 
 class SingleCard extends StatelessWidget {
