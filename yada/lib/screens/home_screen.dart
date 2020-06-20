@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 import './all_decks_screen.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -59,14 +60,17 @@ class HomeScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: size.height * 0.05,
-              left: size.width * 0.65,
-              height: size.height * 0.35,
+              left: size.width * 0.60,
+              height: size.height * 0.54,
               width: size.width * 0.1,
               child: Container(
                 child: InkWell(
-                  child: Image.asset(
-                    'assets/images/new_arrow.gif',
-                    fit: BoxFit.contain,
+                  child: Transform.rotate(
+                    angle: (-math.pi / 3),
+                    child: Image.network(
+                      'https://media.giphy.com/media/gLXQGDl3XblgshSvFH/giphy.gif',
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),

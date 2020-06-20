@@ -31,29 +31,10 @@ class PlayingCardItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Container(
-                child: Image.asset(
-                  'assets/images/white_shadow.png',
-                  color: Color.fromRGBO(255, 255, 255, 0.7),
-                  colorBlendMode: BlendMode.modulate,
-                  fit: BoxFit.fill,
-                  height: 90,
-                ),
-              ),
-              Positioned(
-                top: 5,
-                left: 20,
-                child: Container(
-                  child: Image.asset(
-                    iconURL,
-                    fit: BoxFit.contain,
-                    height: 70,
-                  ),
-                ),
-              ),
-            ],
+          Image.asset(
+            iconURL,
+            fit: BoxFit.contain,
+            height: 60,
           ),
           Text(
             playingCard.content,
