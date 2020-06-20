@@ -31,18 +31,17 @@ class PlayingCardItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Container(
-            child: Image.asset(
-              iconURL,
-              fit: BoxFit.contain,
-              height: 70,
-            ),
+          Image.asset(
+            iconURL,
+            fit: BoxFit.contain,
+            height: 60,
           ),
           Text(
             playingCard.content,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1,
             softWrap: true,
+            overflow: TextOverflow.fade,
           ),
         ],
       ),
