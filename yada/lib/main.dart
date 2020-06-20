@@ -32,6 +32,10 @@ class MyApp extends StatelessWidget {
               fontFamily: "ScribbleWire",
               fontSize: 18,
             ),
+            headline3: TextStyle(
+              fontFamily: "ScribbleWire",
+              fontSize: 14,
+            ),
             bodyText1: TextStyle(
               fontFamily: "EagleNaturalist",
               fontSize: 18,
